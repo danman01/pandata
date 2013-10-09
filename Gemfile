@@ -7,6 +7,8 @@ gem 'rails', '4.0.0'
 # Use sqlite3 as the database for Active Record
 gem 'pg'
 gem 'rails_12factor', group: :production
+gem "thin"
+gem "pandata"
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
@@ -28,6 +30,7 @@ gem 'turbolinks'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
+gem "pandata"
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
@@ -44,4 +47,4 @@ end
 # gem 'capistrano', group: :development
 
 # Use debugger
-# gem 'debugger', group: [:development, :test]
+gem 'debugger', group: [:development, :test]
