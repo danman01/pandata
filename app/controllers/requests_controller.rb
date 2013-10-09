@@ -6,20 +6,26 @@ class RequestsController < ApplicationController
 
   # POST
   def incoming
-    @params = params
     scraper = Pandata::Scraper.get(params[:email])
-    response = {:email=>params[:email]}
-    # what to get from pandata?
-    #
-    # recent activity
-    response.merge!({:recent_activity=>scraper.recent_activity})
-    #
-    # stations
-    response.merge!({:stations=>scraper.stations, :playing_station=>scraper.playing_station})
-    # followers, following
-    response.merge!({:followers=>scraper.followers,:following=>scraper.following})
-    response.merge!({:bookmarks => scraper.bookmarks})
-    response.merge!({:likes => scraper.likes})
+    if scraper.class == Array && scraper.empty?
+      # return not found
+      response = {:email=>params[:email],:status=>"not found"}
+    else
+      # the basics
+      response = {:email=>params[:email], :status=>"found"}
+      # what to get from pandata?
+      #
+      # recent activity
+      response.merge!({:recent_activity=>scraper.recent_activity})
+      #
+      # stations
+      response.merge!({:stations=>scraper.stations, :playing_station=>scraper.playing_station})
+      # followers, following
+      response.merge!({:followers=>scraper.followers,:following=>scraper.following})
+      response.merge!({:bookmarks => scraper.bookmarks})
+      response.merge!({:likes => scraper.likes})
+    end
+    
     @response = {:pandata => response}
     render json: @response
   end
