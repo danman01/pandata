@@ -30,6 +30,6 @@ class RequestsController < ApplicationController
     
     @response = {:pandata => response}
     #respond_with(@response)
-    render json: @response
+    render json: @response.to_json, :callback=>params[:callback]
   end
 end
