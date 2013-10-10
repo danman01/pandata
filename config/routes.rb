@@ -7,8 +7,7 @@ Pandata::Application.routes.draw do
 
   resources :requests do
     collection do
-      post 'incoming'
-      get 'incoming'
+      match 'incoming', via: [:get,:post]
     end
   end
 
