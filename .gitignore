@@ -17,3 +17,5 @@
 
 # ignore database.yml
 /config/database.yml
+
+.ruby-*
