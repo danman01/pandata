@@ -10,6 +10,7 @@ class RequestsController < ApplicationController
 
   # POST
   def incoming
+    puts "incoming request! #{params}"
     @scraper = Pandata::Scraper.get(params[:email])
     if @scraper.class == Array && @scraper.empty?
       # return not found
