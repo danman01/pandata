@@ -11,7 +11,7 @@ class RequestsController < ApplicationController
   # POST
   def incoming
     @scraper = Pandata::Scraper.get(params[:email])
-    if @scraper.class == Array && scraper.empty?
+    if @scraper.class == Array && @scraper.empty?
       # return not found
       @response = {:status=>"not found",:email=>params[:email]}
     else 
