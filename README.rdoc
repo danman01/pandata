@@ -1,48 +1,49 @@
 Rails app that acts as a REST API for Pandora. Uses the Pandora scraper command line script, pandata.
 
 View the running example on Heroku: http://pandata.heroukapp.com/requests/incoming?format=json&yourEmailHere&all=true
+
 (Fill in yourEmailHere with your pandora email, or someone else's, to get their Pandora listening stats)
 
 Example output:
 {
-  "pandata": {
-  "status": "found",
-  "email": "danman01@uga.edu",
-  "recent_activity": [
-  "Explosions In The Sky",
-  "Them Crooked Vultures",
-  "The National",
-  "MUTEMATH",
-  "Death Cab For Cutie",
-  "Jump, Little Children",
-  "Modern Skirts",
-  "Crosby, Stills, Nash & Young"
-  ],
-  "stations": [
-  "Explosions In The Sky Radio",
-  "Them Crooked Vultures Radio",
-  "The National Radio",
-  "Mute Math Radio",
-  "Death Cab For Cutie Radio",
-  "Jump, Little Children Radio",
-  "Modern Skirts Radio",
-  "Crosby, Stills, Nash & Young Radio",
-  "danman01's QuickMix"
-  ],
-  "playing_station": "",
-  "followers": [],
-  "following": [],
-  "bookmarks": {
-  "artists": [],
-  "tracks": []
-  },
-  "likes": {
-  "artists": [],
-  "albums": [],
-  "stations": [],
-  "tracks": []
-  }
-  }
+    "pandata": {
+        "bookmarks": {
+            "artists": [], 
+            "tracks": []
+        }, 
+        "email": "danman01@uga.edu", 
+        "followers": [], 
+        "following": [], 
+        "likes": {
+            "albums": [], 
+            "artists": [], 
+            "stations": [], 
+            "tracks": []
+        }, 
+        "playing_station": "", 
+        "recent_activity": [
+            "Explosions In The Sky", 
+            "Them Crooked Vultures", 
+            "The National", 
+            "MUTEMATH", 
+            "Death Cab For Cutie", 
+            "Jump, Little Children", 
+            "Modern Skirts", 
+            "Crosby, Stills, Nash & Young"
+        ], 
+        "stations": [
+            "Explosions In The Sky Radio", 
+            "Them Crooked Vultures Radio", 
+            "The National Radio", 
+            "Mute Math Radio", 
+            "Death Cab For Cutie Radio", 
+            "Jump, Little Children Radio", 
+            "Modern Skirts Radio", 
+            "Crosby, Stills, Nash & Young Radio", 
+            "danman01's QuickMix"
+        ], 
+        "status": "found"
+    }
 }
 
 Enjoy!
